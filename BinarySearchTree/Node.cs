@@ -10,6 +10,7 @@ namespace BinarySearchTree
     {
         //Member Variables
         public int data;
+        public int level;
         public Node left;
         public Node right;
 
@@ -20,6 +21,7 @@ namespace BinarySearchTree
             this.data = data;
             left = null;
             right = null;
+            level = 0;
         }
 
         //Member Methods

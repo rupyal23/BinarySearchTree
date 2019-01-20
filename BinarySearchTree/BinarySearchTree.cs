@@ -55,14 +55,58 @@ namespace BinarySearchTree
                             temp = temp.right;
                         }
                     }
+                    else
+                    {
+                        Console.WriteLine("{0} Could not be added. Already Exists in the Tree !", data);
+                        return;
+                    }
                 }
                 
             }
         }
 
-        public void Search(int data)
+        public bool Search(int data)
         {
-
+            Node temp = root;
+            if(temp.data == data)
+            {
+                return true;
+            }
+            while (true)
+            {
+                if(data < temp.data) 
+                {
+                    if (temp.left == null)
+                    {
+                        return false;
+                    }
+                    else if(temp.left.data == data)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        temp = temp.left;
+                    }
+                    
+                }
+                if (data > temp.data)
+                {
+                    if (temp.right == null)
+                    {
+                        return false;
+                    }
+                    else if(temp.right.data == data)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        temp = temp.right;
+                    }
+                    
+                }
+            }
         }
     }
 }
